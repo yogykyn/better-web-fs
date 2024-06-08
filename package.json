@@ -1,0 +1,24 @@
+{
+  "name": "better-web-fs",
+  "version": "0.1.0",
+  "description": "A library to access the file system in the web browser that simulates the NodeJS API.",
+  "main": "./dist/main.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yogykyn/better-web-fs.git"
+  },
+  "keywords": [
+    "better",
+    "web",
+    "fs",
+    "filesystem",
+    "browser"
+  ],
+  "author": "Yoga",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yogykyn/better-web-fs/issues"
+  },
+  "homepage": "https://github.com/yogykyn/better-web-fs#readme"
+}
