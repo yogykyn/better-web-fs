@@ -1,0 +1,5 @@
+# Dependency directory
+node_modules/
+
+# The directory contains the build output
+dist/
