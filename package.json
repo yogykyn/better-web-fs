@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "description": "A library to access the file system in the web browser that simulates the NodeJS API.",
   "main": "./dist/main.js",
-  "scripts": {},
+  "scripts": {
+    "lint": "npx eslint ./src/**/*.ts",
+    "build": "./scripts/esbuild.mjs",
+    "watch:build": "./scripts/esbuild.mjs --watch"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yogykyn/better-web-fs.git"
@@ -20,5 +24,14 @@
   "bugs": {
     "url": "https://github.com/yogykyn/better-web-fs/issues"
   },
-  "homepage": "https://github.com/yogykyn/better-web-fs#readme"
+  "homepage": "https://github.com/yogykyn/better-web-fs#readme",
+  "devDependencies": {
+    "@types/node": "^20.14.2",
+    "arg": "^5.0.2",
+    "esbuild": "^0.21.4",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "buffer": "^6.0.3"
+  }
 }
