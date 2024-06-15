@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import eslint from 'esbuild-plugin-eslint';
 import * as esbuild from 'esbuild';
 import arg from 'arg';
 
@@ -19,9 +18,6 @@ const defaultBuildOptions = {
   keepNames: true,
   minify: true,
   treeShaking: true,
-  plugins: eslint({
-    useEslintrc: true,
-  })
 };
 
 if (args?.['--watch'] === true) {
