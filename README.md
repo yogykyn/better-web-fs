@@ -28,8 +28,8 @@ bum install better-web-fs --save
 import { IndexedFs, MemoryFs } from 'better-web-fs';
 
 async function main() {
-  const rootfs = new IndexedFs();
-  const tmpfs = new MemoryFs();
+  const rootfs = new IndexedFs(125829120 /* 120 mb */);
+  const tmpfs = new MemoryFs(12582912 /* 12 mb */);
 
   await rootfs.mount(tmpfs, '/tmp');
   await rootfs.writeFile('/tmp/test.txt', 'Hello world');
