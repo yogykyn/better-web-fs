@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "npx eslint ./src/**/*.ts",
     "build": "./scripts/esbuild.mjs",
-    "watch:build": "./scripts/esbuild.mjs --watch"
+    "dev": "./scripts/esbuild.mjs --development",
+    "watch:dev": "./scripts/esbuild.mjs --development --watch"
   },
   "repository": {
     "type": "git",

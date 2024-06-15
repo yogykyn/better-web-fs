@@ -59,7 +59,10 @@ Or you can run npm script to build.
 npm run build
 ```
 ```shell
-npm run watch:build
+npm run dev
+```
+```shell
+npm run watch:dev
 ```
 
 ## License

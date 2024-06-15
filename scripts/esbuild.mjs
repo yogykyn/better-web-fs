@@ -5,8 +5,9 @@ import arg from 'arg';
 const args = arg({
   '--watch': Boolean,
   '--quiet': Boolean,
-}, { argv: process.argv });
-
+  '--development': Boolean,
+  }, { argv: process.argv });
+  
 /** @type {import('esbuild').BuildOptions} */
 const defaultBuildOptions = {
   entryPoints: [
@@ -15,9 +16,10 @@ const defaultBuildOptions = {
   outfile: 'dist/index.mjs',
   target: 'es6',
   platform: 'browser',
+  bundle: true,
   keepNames: true,
-  minify: true,
-  treeShaking: true,
+  minify: args['--development'] ?? true,
+  treeShaking: args['--development'] ?? true,
 };
 
 if (args?.['--watch'] === true) {
