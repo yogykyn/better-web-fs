@@ -1,3 +1,24 @@
+import Constants from './constants';
+import type { MountableFilesystem } from './filesystem';
+import type { Stats } from './stats';
+
+export type FilesystemOperation = 'read' | 'write'  | 'execute';
+
+/**
+ * Function to validate credentials or can also change credentials (only temporarily).
+ */
+export type PermissionValidator = (
+  creds: Creds,
+  stats: Stats,
+  operation: FilesystemOperation,
+  fs: MountableFilesystem,
+) => Promise<PermissionValidatorResult> | PermissionValidatorResult;
+
+export type PermissionValidatorResult = {
+  ok: boolean,
+  creds?: Creds | undefined,
+};
+
 /**
  * Class that represents credentials
  */
