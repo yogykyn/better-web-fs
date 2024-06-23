@@ -76,3 +76,18 @@ export class SyscallError extends Error {
     this.path = path;
   }
 }
+
+/**
+ * Class that represents type errors with additional error codes
+ */
+export class TypeErrorWithCode extends TypeError {
+  public code: string;
+  public message: string;
+
+  constructor(code: string, message: string) {
+    super(`TypeError [${code}]: ${message}`)
+
+    this.code = code;
+    this.message = message;
+  }
+}
