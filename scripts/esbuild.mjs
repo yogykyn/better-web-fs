@@ -18,8 +18,8 @@ const defaultBuildOptions = {
   platform: 'browser',
   bundle: true,
   keepNames: true,
-  minify: args['--development'] ?? true,
-  treeShaking: args['--development'] ?? true,
+  minify: !(args['--development'] ?? false),
+  treeShaking: !(args['--development'] ?? false),
 };
 
 if (args?.['--watch'] === true) {
