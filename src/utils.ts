@@ -1,18 +1,3 @@
-import * as path from './libs/path';
-import { TypeErrorWithCode } from './libs/errors';
-
-export function convertURLToPath (url: URL) {
-  if (url.protocol !== 'file:') {
-    throw new TypeErrorWithCode('[ERR_INVALID_FILE_URL_PATH]', `Expected protocol is file, but given is ${url.protocol}`);
-  }
-
-  if (url.hostname !== '') {
-    throw new TypeErrorWithCode('[ERR_INVALID_FILE_URL_PATH]', 'The URL must be of scheme file');
-  }
-
-  return path.normalize(url.pathname);
-}
-
 export function generateRandomCharacters(length: number): string {
   let result = '';
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -21,4 +6,10 @@ export function generateRandomCharacters(length: number): string {
   }
 
   return result;
+}
+
+export function convertToUNIXTime(value: number | string | Date): number {
+  if (typeof value === 'string') return parseInt(value);
+  else if (value instanceof Date) return value.getTime();
+  else return value;
 }
