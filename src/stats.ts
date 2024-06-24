@@ -1,5 +1,8 @@
 import Constants from './constants';
 
+/**
+ * Class returned by the fs.stat function.
+ */
 export class Stats {
   public constructor(
     public dev: number,
@@ -51,6 +54,9 @@ export class Stats {
   }
 }
 
+/**
+ * Class returned by the fs.stat function in bigint.
+ */
 export class BigIntStats {
   public constructor(
     public dev: bigint,
@@ -106,6 +112,9 @@ export class BigIntStats {
   }
 }
 
+/**
+ * Class returned by the fs.statfs function.
+ */
 export class StatFs {
   public constructor (
     public type: number,
@@ -115,9 +124,12 @@ export class StatFs {
     public bavail: number,
     public files: number,
     public ffree: number
-  ) {};
+  ) {}
 }
 
+/**
+ * Class returned by the fs.statfs function in bigint.
+ */
 export class BigIntStatFs {
   public constructor (
     public type: bigint,
@@ -127,5 +139,5 @@ export class BigIntStatFs {
     public bavail: bigint,
     public files: bigint,
     public ffree: bigint
-  ) {};
+  ) {}
 }
