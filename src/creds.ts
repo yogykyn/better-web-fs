@@ -1,15 +1,12 @@
-import Constants from './constants';
 import type { MountableFilesystem } from './filesystem';
-import type { Stats } from './stats';
-
-export type FilesystemOperation = 'read' | 'write'  | 'execute';
+export type FilesystemOperation = 'read' | 'write' | 'execute';
 
 /**
  * Function to validate credentials or can also change credentials (only temporarily).
  */
 export type PermissionValidator = (
+  filepath: string,
   creds: Creds,
-  stats: Stats,
   operation: FilesystemOperation,
   fs: MountableFilesystem,
 ) => Promise<PermissionValidatorResult> | PermissionValidatorResult;
@@ -39,3 +36,5 @@ export class Creds {
     this.egid = egid;
   }
 }
+
+export const rootCreds = new Creds(0, 0, 0, 0, 0, 0);
